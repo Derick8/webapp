@@ -14,7 +14,7 @@ pipeline {
     }
   stage ('Check-git-ecrets') {
       steps {
-       sh 'docker run gesellix/trufflehog --json https://github.com/Derick8/webapp.git'
+       sh 'sudo docker run gesellix/trufflehog --json https://github.com/Derick8/webapp.git'
              }
   }
     stage ('Build') {
