@@ -15,6 +15,7 @@ pipeline {
     stage ('Build') {
       steps {
        sh 'mvn package'
+       sh 'mvn dependency:resolve-plugins'
        sh 'mvn clean package'
        }
   }
