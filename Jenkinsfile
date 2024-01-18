@@ -17,7 +17,9 @@ pipeline {
            sh 'mvn clean package'
        }
      stage ('Derick thing'){
-      
+      steps {
+           sh 'echo 1'
+      }
      }
   }
 }
