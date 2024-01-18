@@ -8,7 +8,7 @@ pipeline {
       steps{
         sh '''
                 echo "PATH = {PATH}"
-                echo "M2_HOME = ${m@_HOME}"
+                echo "M2_HOME = ${M2_HOME}"
            '''
       }
     }
