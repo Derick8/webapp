@@ -18,7 +18,7 @@ pipeline {
        }
      stage ('Derick thing'){
       steps {
-           sh 'echo 1'
+           sh 'echo "batman"'
       }
      }
   }
