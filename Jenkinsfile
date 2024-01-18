@@ -22,12 +22,12 @@ pipeline {
            sh 'echo "batman"'
       }
      }
-    stage ('Deploy to Tomcat') {
-     steps {
-        sshagent(['tomcat']) {
-       sh 'ssh -o  StrictHostKeyChecking=no -B /var/lib/jenkins/workspace/webapp-cicd-pipeline/target/WebApp.war ubuntu@3.24.110.158:/prod/apache-tomcat-9.0.85/webapps/webapp.war'
-     }
-     }
+  stage ('Deploy-To-Tomcat') {
+            steps {
+           sshagent(['tomcat']) {
+                sh 'scp -o StrictHostKeyChecking=no target/*.war ubuntu@3.24.110.158:/prod/apache-tomcat-9.0.85/webapps/webapp.war'
+              }      
+           }       
     }
     }
 }
