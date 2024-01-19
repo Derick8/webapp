@@ -20,6 +20,14 @@ pipeline {
         sh 'cat trufflehog'
       }
     }
+  stage ('Source compisition analysys - OWASP dependancy check') {
+   steps {
+    sh 'rm owasp* || true'
+     sh 'wget https://raw.githubusercontent.com/Derick8/webapp/master/owasp-dependency-check.sh'
+    sh 'chmod +x owasp-dependency-check.sh'
+    sh './owasp-dependency-check.sh'
+   }
+  }
     stage ('Build') {
       steps {
            sh 'mvn clean package'
